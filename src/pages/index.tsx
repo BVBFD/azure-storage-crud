@@ -1,18 +1,8 @@
+import React from 'react';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import AzureStorageUpload from './azure-storage-upload';
 
 export default function Home() {
-  const [testArr, setTestArr] = useState<Array<number | string>>([1, 2, 3, 4, 5]);
-
-  let varTest = 'varTest';
-
-  useEffect(() => {
-    varTest = 'letTest';
-    setTestArr([...testArr, varTest]);
-  }, []);
-
-  // commit test in new config dev enviroment
-
   return (
     <>
       <Head>
@@ -32,11 +22,7 @@ export default function Home() {
         <link href="https://lsevina126.netlify.app" rel="canonical" />
         {/* SEO */}
       </Head>
-      <header>Blog Project Refactor</header>
-      <main>
-        <div>Main Box Contents</div>
-      </main>
-      <footer>Footer</footer>
+      <AzureStorageUpload />
     </>
   );
 }
